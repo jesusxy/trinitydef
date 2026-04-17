@@ -1,5 +1,5 @@
 ---
-title: "trinity"
+title: "trinitydef"
 ---
 
 security researcher. malware analyst. systems engineer.
