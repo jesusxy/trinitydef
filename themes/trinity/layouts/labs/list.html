@@ -1,0 +1,29 @@
+{{ define "main" }}
+  <div class="board-header">
+    <span class="board-title">/labs/ - vx</span>
+  </div>
+  <hr class="board-hr">
+
+  {{ range .Pages }}
+  <div class="thread-preview">
+    <div class="thread-op">
+      {{ if .Params.image }}
+      <img src="{{ .Params.image | absURL }}" class="thread-thumb">
+      {{ end }}
+      <div class="thread-op-body">
+        <div class="post-header">
+          <span class="post-subject">{{ .Title }}</span>
+          <span class="post-num">No.{{ .Params.thread_id }}</span>
+          <span class="post-date">{{ .Date.Format "2006-01-02" }}</span>
+          <a href="{{ .Permalink }}" class="post-reply">[view]</a>
+        </div>
+        <div class="post-tags">
+          {{ range .Params.tags }}<span class="tag">{{ . }}</span>{{ end }}
+        </div>
+        <div class="post-excerpt">{{ .Summary }}</div>
+      </div>
+    </div>
+  </div>
+  <hr class="board-hr">
+  {{ end }}
+{{ end }}
