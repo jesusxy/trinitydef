@@ -1,5 +1,5 @@
 ---
-title: "the trinity project"
+title: "project trinity"
 ---
 
 # jesus
