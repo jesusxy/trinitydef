@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ .Site.Params.description }}">
   <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
   <link rel="stylesheet" href="{{ "css/style.css" | absURL }}">
 </head>
-<body>
-  <div id="wrap">
+<body class="page-{{ .Kind }} section-{{ .Section | default "home" }}">
+  <div class="site-shell">
     {{ partial "header.html" . }}
-    <div id="content">
+    <main id="content">
       {{ block "main" . }}{{ end }}
-    </div>
+    </main>
     {{ partial "footer.html" . }}
   </div>
 </body>

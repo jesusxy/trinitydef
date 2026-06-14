@@ -1,6 +1,9 @@
 ---
 title: "loupe"
 date: 2026-01-01
+record_id: "PRJ-001"
+record_class: "software"
+status: "active"
 description: "emulation-based malware deobfuscator and unpacker"
 tags: ["go", "unicorn", "malware-analysis"]
 ---

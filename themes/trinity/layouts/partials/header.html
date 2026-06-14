@@ -1,8 +1,19 @@
-<div id="header">
-  <a href="{{ .Site.BaseURL }}" class="site-title">{{ .Site.Title }}</a>
-  <nav>
+<header id="header" class="site-header">
+  <div class="header-main">
+    <a href="{{ .Site.BaseURL }}" class="site-title">
+      <span class="site-mark" aria-hidden="true"></span>
+      <span>{{ .Site.Title }}</span>
+    </a>
+    <nav aria-label="Primary navigation">
     {{ range .Site.Menus.main }}
       <a href="{{ .URL }}">{{ .Name }}</a>
     {{ end }}
-  </nav>
-</div>
+    </nav>
+  </div>
+  <div class="header-meta">
+    <span>PERSONAL RESEARCH ARCHIVE</span>
+    <span>SECURITY / SYSTEMS / CULTURE</span>
+    <span>EST. 2026</span>
+    <span class="status-indicator">STATUS: ACTIVE</span>
+  </div>
+</header>

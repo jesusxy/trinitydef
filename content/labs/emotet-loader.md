@@ -1,6 +1,9 @@
 ---
 title: "emotet loader"
 date: 2026-04-17
+record_id: "LAB-001"
+record_class: "analysis"
+status: "triage"
 thread_id: "001"
 sha256: "a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2"
 family: "emotet"

@@ -1,18 +1,30 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
-  {{ if .Content }}<div>{{ .Content }}</div>{{ end }}
-  <ul class="post-list">
-    {{ range .Pages }}
-    <li>
-      <div class="post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></div>
-      <div class="post-meta">
-        {{ .Date.Format "2006-01-02" }} &mdash;
-        {{ range .Params.tags }}<span class="tag">{{ . }}</span>{{ end }}
+  <header class="page-header">
+    <div class="eyebrow">ARCHIVE DIRECTORY / {{ upper .Title }}</div>
+    <h1>{{ .Title }}</h1>
+    {{ if .Content }}<div class="page-deck">{{ .Content }}</div>{{ end }}
+    <div class="page-specs">
+      <span><b>CLASS</b> DIRECTORY</span>
+      <span><b>RECORDS</b> {{ len .Pages }}</span>
+      <span><b>ACCESS</b> PUBLIC</span>
+    </div>
+  </header>
+  <section class="archive-section">
+    <div class="section-control">
+      <span>{{ upper .Title }} / RECORD INDEX</span>
+      <span>SORT: DATE DESC</span>
+    </div>
+    <div class="record-table">
+      <div class="record-row record-head" aria-hidden="true">
+        <span>ID</span>
+        <span>CLASS</span>
+        <span>SUBJECT</span>
+        <span>STATUS</span>
+        <span>DATE</span>
       </div>
-      {{ if .Params.description }}
-      <div style="color: #444; margin-top: 2px;">{{ .Params.description }}</div>
+      {{ range .Pages.ByDate.Reverse }}
+        {{ partial "record-row.html" . }}
       {{ end }}
-    </li>
-    {{ end }}
-  </ul>
+    </div>
+  </section>
 {{ end }}

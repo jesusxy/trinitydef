@@ -1,6 +1,9 @@
 ---
 title: "nox"
 date: 2025-01-01
+record_id: "PRJ-002"
+record_class: "software"
+status: "complete"
 description: "Go-based IDS with MITRE ATT&CK mapping"
 tags: ["go", "ids", "detection", "mitre"]
 ---

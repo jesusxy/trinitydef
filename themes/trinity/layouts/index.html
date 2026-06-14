@@ -1,23 +1,42 @@
 {{ define "main" }}
-  <div style="text-align: center;">
-    <img src="{{ "img/7XVIGXO.gif" | absURL }}" alt="" />
-  </div>
-  <div class="intro">
-    {{ .Content }}
-  </div>
+  <section class="hero">
+    <div class="hero-copy">
+      <div class="eyebrow">OPERATOR PROFILE / FILE 000</div>
+      {{ .Content }}
+    </div>
+    <figure class="hero-media">
+      <div class="media-frame">
+        <img src="{{ "img/7XVIGXO.gif" | absURL }}" alt="Ghost in the Shell animation">
+        <span class="frame-corner frame-corner-tl"></span>
+        <span class="frame-corner frame-corner-br"></span>
+      </div>
+      <figcaption class="spec-grid">
+        <span><b>CLASS</b> CULTURAL REFERENCE</span>
+        <span><b>SOURCE</b> GHOST IN THE SHELL</span>
+        <span><b>STATUS</b> SIGNAL ACQUIRED</span>
+        <span><b>REV</b> 06.26</span>
+      </figcaption>
+    </figure>
+  </section>
 
   {{ if .Site.RegularPages }}
-  <h1>recent posts</h1>
-  <ul class="post-list">
-    {{ range first 10 .Site.RegularPages }}
-    <li>
-      <div class="post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></div>
-      <div class="post-meta">
-        {{ .Date.Format "2006-01-02" }} &mdash;
-        {{ range .Params.tags }}<span class="tag">{{ . }}</span>{{ end }}
+  <section class="archive-section">
+    <div class="section-control">
+      <span>INDEX / RECENT RECORDS</span>
+      <span>{{ len .Site.RegularPages }} FILES IN ARCHIVE</span>
+    </div>
+    <div class="record-table">
+      <div class="record-row record-head" aria-hidden="true">
+        <span>ID</span>
+        <span>CLASS</span>
+        <span>SUBJECT</span>
+        <span>STATUS</span>
+        <span>DATE</span>
       </div>
-    </li>
-    {{ end }}
-  </ul>
+      {{ range first 10 .Site.RegularPages.ByDate.Reverse }}
+        {{ partial "record-row.html" . }}
+      {{ end }}
+    </div>
+  </section>
   {{ end }}
 {{ end }}

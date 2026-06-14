@@ -1,5 +1,8 @@
 ---
 title: "canon"
+record_id: "REF-001"
+record_class: "reference"
+status: "permanent"
 ---
 
 these are texts, people, and ideas that form the bedrock of how i work and why. not inspiration, more like obligations. the standard im trying to meet.
