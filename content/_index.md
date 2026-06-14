@@ -11,4 +11,4 @@ interest : math, computer arch, malware, the art of cyberwarfare, civic tech, th
 
 - tap in
   - [proof of work](https://github.com/jesusxy)
-  - [hire me](https://linkedin.com/jesuschvz)
+  - [hire me](https://linkedin.com/jesuschvz/)
